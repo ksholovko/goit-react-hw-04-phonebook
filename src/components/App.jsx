@@ -31,7 +31,7 @@ export function App() {
     return;
   }
     
-   setContacts([newContact, ...contacts]);
+   setContacts(prevContacts => [newContact, ...prevContacts]);
 
   }
    
@@ -40,7 +40,7 @@ export function App() {
   }
 
   const deleteContact = (contactId) => { 
-    setContacts(contacts.filter(contact => contact.id !== contactId))
+    setContacts(prevContacts => prevContacts.filter(contact => contact.id !== contactId))
    }
 
   
